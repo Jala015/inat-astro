@@ -1,5 +1,5 @@
 ---
-
+import PesquisaEspecie from '@components/pesquisaEspecie.svelte'
 ---
 
 <html lang="en">
@@ -8,9 +8,15 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<link href="fonts/cabin/cabin.css" rel="stylesheet">
+		<title>Inat</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-slate-300 bg-gradient-to-b from-slate-300 to-slate-400/70 min-h-screen p-5 container mx-auto">
+		<h1 class="text-4xl text-center mb-5 text-slate-700">Investigador de sazonalidade <span class="inline-block">com iNaturalist</span></h1>
+		<div class="flex justify-center items-center min-h-[70vh]">
+			<PesquisaEspecie client:load />
+		</div>
 	</body>
+
+
 </html>
