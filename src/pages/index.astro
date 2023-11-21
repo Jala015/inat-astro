@@ -4,6 +4,7 @@ import PesquisaEspecie from '@components/pesquisaEspecie.svelte'
 
 <html lang="en">
 	<head>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
@@ -18,11 +19,14 @@ import PesquisaEspecie from '@components/pesquisaEspecie.svelte'
 	<body class="bg-slate-300 bg-gradient-to-b from-slate-300 to-slate-400/70 min-h-screen p-5 container mx-auto">
 		<h1 class="text-4xl text-center mb-5 text-slate-700">Investigador de sazonalidade <span class="inline-block">com iNaturalist</span></h1>
 
-		<div class=" min-h-[70vh]">
+		<div class="min-h-[70vh]">
 			
 			<PesquisaEspecie client:only />
 		</div>
-		
+		<div class="text-center">
+			<a class="github-button mx-auto block" href="https://github.com/Jala015/sazonalidade-inat" data-color-scheme="no-preference: dark; light: light; dark: dark;" aria-label="Ver no github GitHub" data-size="large">Ver no github</a>
+		</div>
+		<!-- Place this tag where you want the button to render. -->
 	</body>
 
 

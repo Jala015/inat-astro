@@ -153,6 +153,8 @@ Família:  {$speciesData.family}
 Espécie:  <i class="font-bold">{$speciesData.species}</i>
 </pre>
 <button class="bg-lime-600 hover:bg-lime-500 p-2 rounded-md w-full my-5 text-slate-100" on:click={()=>{location.reload()}}>Reiniciar</button>
+
+<a target="_blank" href={`https://www.gbif.org/occurrence/search?dataset_key=50c9509d-22c7-4a22-a47d-8c48425ef4a7&taxon_key=${$speciesData.speciesKey}`} class="block bg-lime-600 hover:bg-lime-500 p-2 text-center rounded-md w-full my-5 text-slate-100">Download de dados no GBIF</a>
 </div>
 {:else}
 <div>
