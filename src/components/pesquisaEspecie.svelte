@@ -10,7 +10,10 @@
   let map = null;
 
   onMount(() => {
-    map = L.map("map").setView([-30.04493904, 55.0444], 2);
+    map = L.map("map",{
+      maxBounds: [[-90, -180],[90,542]],
+      maxBoundsViscosity: 1.0
+    }).setView([-30.04493904, 55.0444], 2);
     L.tileLayer(
       "  https://tile.gbif.org/4326/omt/{z}/{x}/{y}@1x.png?style=gbif-dark",
       {
@@ -82,7 +85,7 @@
      camadas['<span class="text-blue-500">Inverno austral<span>'] = inverno;
 
 
-    L.control.layers(camadas, null,{collapsed: false}).addTo(map);
+    L.control.layers(camadas, null,{collapsed: false}).setPosition('bottomleft').addTo(map);
   }
 
   async function buscaEspecie() {
@@ -144,7 +147,7 @@
     <div>
 
       <pre
-      class="block leading-loose overflow-x-scroll bg-slate-500 shadow-inner rounded-lg max-w-max text-white p-4 mt-10">
+      class="block leading-loose overflow-x-scroll bg-slate-500 shadow-inner rounded-lg max-w-max text-white p-4">
 Reino:    {$speciesData.kingdom}
 Filo:     {$speciesData.phylum}
 Classe:   {$speciesData.class}
@@ -152,7 +155,7 @@ Ordem:    {$speciesData.order}
 Família:  {$speciesData.family}
 Espécie:  <i class="font-bold">{$speciesData.species}</i>
 </pre>
-<button class="bg-lime-600 hover:bg-lime-500 p-2 rounded-md w-full my-5 text-slate-100" on:click={()=>{location.reload()}}>Reiniciar</button>
+<button class="bg-slate-600 hover:bg-slate-500 p-2 rounded-md w-full my-5 text-slate-100" on:click={()=>{location.reload()}}>Reiniciar</button>
 
 <a target="_blank" href={`https://www.gbif.org/occurrence/search?dataset_key=50c9509d-22c7-4a22-a47d-8c48425ef4a7&taxon_key=${$speciesData.speciesKey}`} class="block bg-lime-600 hover:bg-lime-500 p-2 text-center rounded-md w-full my-5 text-slate-100">Download de dados no GBIF</a>
 </div>
